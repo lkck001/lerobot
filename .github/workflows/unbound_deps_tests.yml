@@ -185,7 +185,7 @@ jobs:
           HTTP_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" \
                                -H "Authorization: JWT ${TOKEN}" \
                                -X DELETE \
-                               https://hub.docker.com/v2/repositories/${IMAGE_NAME}/tags/$IMAGE_TAG)
+                               https://hub.docker.com/v2/repositories/${IMAGE_NAME}/tags/$IMAGE_TAG/)
 
           if [ "$HTTP_RESPONSE" -eq 204 ]; then
             echo "Successfully deleted Docker image tag: $IMAGE_NAME:$IMAGE_TAG"

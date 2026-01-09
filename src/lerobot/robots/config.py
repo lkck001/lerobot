@@ -34,7 +34,6 @@ class RobotConfig(draccus.ChoiceRegistry, abc.ABC):
                         raise ValueError(
                             f"Specifying '{attr}' is required for the camera to be used in a robot"
                         )
-
     @property
     def type(self) -> str:
         return self.get_choice_name(self.__class__)
